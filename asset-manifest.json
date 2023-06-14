@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wizard-pizza-mages-guild/static/css/main.437ffae4.css",
+    "main.js": "/wizard-pizza-mages-guild/static/js/main.d08ea94e.js",
+    "index.html": "/wizard-pizza-mages-guild/index.html",
+    "main.437ffae4.css.map": "/wizard-pizza-mages-guild/static/css/main.437ffae4.css.map",
+    "main.d08ea94e.js.map": "/wizard-pizza-mages-guild/static/js/main.d08ea94e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.437ffae4.css",
+    "static/js/main.d08ea94e.js"
+  ]
+}
