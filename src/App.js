@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import config from "../config";
 import "./App.css";
 
 export const App = () => {
@@ -18,7 +19,7 @@ export const App = () => {
 
   const getOrders = () => {
     Axios.get(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/orders"
+      config //orders
     )
       .then((response) => {
         let orderCollection = response.data;
@@ -37,7 +38,7 @@ export const App = () => {
 
   const getDeals = () => {
     Axios.get(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/promos"
+      config //promos"
     )
       .then((response) => {
         let serveDeals = response.data;
@@ -49,7 +50,7 @@ export const App = () => {
 
   const getHours = () => {
     Axios.get(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/hours"
+      config //hours"
     )
       .then((response) => {
         let serveHours = response.data;
@@ -61,7 +62,7 @@ export const App = () => {
 
   const getDrinks = () => {
     Axios.get(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/drinkInventory"
+      config //drinkInventory"
     )
       .then((response) => {
         let serveDrinks = response.data;
@@ -72,7 +73,7 @@ export const App = () => {
   };
   const getDesserts = () => {
     Axios.get(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/dessertInventory"
+      config //dessertInventory"
     )
       .then((response) => {
         let serveDesserts = response.data;
@@ -137,7 +138,7 @@ export const App = () => {
       status: statusAndID(e),
     };
     Axios.post(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/updateStatus",
+      config, //updateStatus"
       updateStatus
     ).then(async () => {
       await delay(500);
@@ -150,7 +151,7 @@ export const App = () => {
       status: promoStatusAndID(e, status),
     };
     Axios.post(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/updatePromoStatus",
+      config, //updatePromoStatus"
       updatePromoStatus
     ).then(async () => {
       await delay(500);
@@ -182,7 +183,7 @@ export const App = () => {
       status: closedStatusAndID(e, status),
     };
     Axios.post(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/updateHours",
+      config, //updateHours"
       updateClosedStatus
     ).then(async () => {
       await delay(500);
@@ -202,7 +203,7 @@ export const App = () => {
       status: hoursUpdateOpen(e, hour),
     };
     Axios.post(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/updateHours",
+      config, //updateHours"
       updateHours
     ).then(async () => {
       await delay(500);
@@ -222,7 +223,7 @@ export const App = () => {
       status: hoursUpdateClose(e, hour),
     };
     Axios.post(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/updateHours",
+      config, //updateHours"
       updateClose
     ).then(async () => {
       await delay(500);
@@ -242,7 +243,7 @@ export const App = () => {
       status: hoursUpdateNotice(e, hour),
     };
     Axios.post(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/updateHours",
+      config, //updateHours"
       updateNotice
     ).then(async () => {
       await delay(500);
@@ -262,7 +263,7 @@ export const App = () => {
       status: drinksUpdateStatus(e, drink),
     };
     Axios.post(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/updateDrinks",
+      config, //updateDrinks"
       updateDrinks
     ).then(async () => {
       await delay(500);
@@ -282,7 +283,7 @@ export const App = () => {
       status: dessertsUpdateStatus(e, dessert),
     };
     Axios.post(
-      "mysql://root:dhadod6Uz2HWhmavr7it@containers-us-west-133.railway.app:5620/railway/updateDesserts",
+      config, //updateDesserts"
       updateDesserts
     ).then(async () => {
       await delay(500);
