@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wizard-pizza-mages-guild/static/css/main.437ffae4.css",
-    "main.js": "/wizard-pizza-mages-guild/static/js/main.d08ea94e.js",
+    "main.js": "/wizard-pizza-mages-guild/static/js/main.c5bb4327.js",
     "index.html": "/wizard-pizza-mages-guild/index.html",
     "main.437ffae4.css.map": "/wizard-pizza-mages-guild/static/css/main.437ffae4.css.map",
-    "main.d08ea94e.js.map": "/wizard-pizza-mages-guild/static/js/main.d08ea94e.js.map"
+    "main.c5bb4327.js.map": "/wizard-pizza-mages-guild/static/js/main.c5bb4327.js.map"
   },
   "entrypoints": [
     "static/css/main.437ffae4.css",
-    "static/js/main.d08ea94e.js"
+    "static/js/main.c5bb4327.js"
   ]
 }
