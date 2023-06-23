@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import config from "../config";
 import "./App.css";
 
 export const App = () => {
@@ -18,9 +17,7 @@ export const App = () => {
   const [changeNoticeHours, setChangeNoticeHours] = useState("");
 
   const getOrders = () => {
-    Axios.get(
-      config //orders
-    )
+    Axios.get(`${process.env.REACT_APP_BACKEND_URL}/orders`)
       .then((response) => {
         let orderCollection = response.data;
         setOrders(orderCollection);
@@ -37,9 +34,7 @@ export const App = () => {
   };
 
   const getDeals = () => {
-    Axios.get(
-      config //promos"
-    )
+    Axios.get(`${process.env.REACT_APP_BACKEND_URL}/promos`)
       .then((response) => {
         let serveDeals = response.data;
         setDeals(serveDeals);
@@ -49,9 +44,7 @@ export const App = () => {
   };
 
   const getHours = () => {
-    Axios.get(
-      config //hours"
-    )
+    Axios.get(`${process.env.REACT_APP_BACKEND_URL}/hours`)
       .then((response) => {
         let serveHours = response.data;
         setHours(serveHours);
@@ -61,9 +54,7 @@ export const App = () => {
   };
 
   const getDrinks = () => {
-    Axios.get(
-      config //drinkInventory"
-    )
+    Axios.get(`${process.env.REACT_APP_BACKEND_URL}/drinkInventory`)
       .then((response) => {
         let serveDrinks = response.data;
         setDrinks(serveDrinks);
@@ -72,9 +63,7 @@ export const App = () => {
       .catch((error) => console.log(error));
   };
   const getDesserts = () => {
-    Axios.get(
-      config //dessertInventory"
-    )
+    Axios.get(`${process.env.REACT_APP_BACKEND_URL}/dessertInventory`)
       .then((response) => {
         let serveDesserts = response.data;
         setDesserts(serveDesserts);
@@ -138,7 +127,7 @@ export const App = () => {
       status: statusAndID(e),
     };
     Axios.post(
-      config, //updateStatus"
+      `${process.env.REACT_APP_BACKEND_URL}/updateStatus`,
       updateStatus
     ).then(async () => {
       await delay(500);
@@ -151,7 +140,7 @@ export const App = () => {
       status: promoStatusAndID(e, status),
     };
     Axios.post(
-      config, //updatePromoStatus"
+      `${process.env.REACT_APP_BACKEND_URL}/updatePromoStatus`,
       updatePromoStatus
     ).then(async () => {
       await delay(500);
@@ -183,7 +172,7 @@ export const App = () => {
       status: closedStatusAndID(e, status),
     };
     Axios.post(
-      config, //updateHours"
+      `${process.env.REACT_APP_BACKEND_URL}/updateHours`,
       updateClosedStatus
     ).then(async () => {
       await delay(500);
@@ -203,7 +192,7 @@ export const App = () => {
       status: hoursUpdateOpen(e, hour),
     };
     Axios.post(
-      config, //updateHours"
+      `${process.env.REACT_APP_BACKEND_URL}/updateHours`,
       updateHours
     ).then(async () => {
       await delay(500);
@@ -223,7 +212,7 @@ export const App = () => {
       status: hoursUpdateClose(e, hour),
     };
     Axios.post(
-      config, //updateHours"
+      `${process.env.REACT_APP_BACKEND_URL}/updateHours`,
       updateClose
     ).then(async () => {
       await delay(500);
@@ -243,7 +232,7 @@ export const App = () => {
       status: hoursUpdateNotice(e, hour),
     };
     Axios.post(
-      config, //updateHours"
+      `${process.env.REACT_APP_BACKEND_URL}/updateHours`,
       updateNotice
     ).then(async () => {
       await delay(500);
@@ -263,7 +252,7 @@ export const App = () => {
       status: drinksUpdateStatus(e, drink),
     };
     Axios.post(
-      config, //updateDrinks"
+      `${process.env.REACT_APP_BACKEND_URL}/updateDrinks`,
       updateDrinks
     ).then(async () => {
       await delay(500);
@@ -283,7 +272,7 @@ export const App = () => {
       status: dessertsUpdateStatus(e, dessert),
     };
     Axios.post(
-      config, //updateDesserts"
+      `${process.env.REACT_APP_BACKEND_URL}/updateDesserts`,
       updateDesserts
     ).then(async () => {
       await delay(500);
